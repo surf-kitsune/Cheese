@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+
+* {
+    font-family: "Fredoka", sans-serif;
+}
+
+body {
+    background-color: #131516;
+    color: white;
+}
+
+li {
+    display: inline;
+    margin-right: 30px;
+
+}
+
+nav {
+    display: flex;
+    padding: 12.5px;
+}
+ul {
+    display: flex;
+    align-items: center;
+}
+
+.logo_image {
+    height: 25px;
+}
+
+
+.searchContainer {
+    display: flex;
+    margin-left: auto;
+}
+
+.barstyle {
+    margin: auto;
+    padding: 10px 5px;
+    border: 0;
+    border-bottom: solid 3px rgb(253, 207, 78);
+    width: 250px;
+    background: transparent;
+    color: white;
+}
+
+.main_content {
+    padding: 20px;
+}
+
+.Cheese_Card {
+    padding: 10px 20px;
+    background-color: #1c1f20;
+    border-radius: 7px;
+    min-width: 300px;
+    max-width: 300px;
+    transition: all 0.5s;
+    margin: 10px;
+}
+
+.Cheese_Card:hover {
+
+    box-shadow: rgba(253, 207, 78, 0.4) 0px 5px, rgba(253, 207, 78, 0.3) 0px 10px, rgba(253, 207, 78, 0.2) 0px 15px, rgba(253, 207, 78, 0.1) 0px 20px, rgba(253, 207, 78, 0.05) 0px 25px;
+}
+
+.Cheese_Card h1 {
+    font-size: 22px;
+}
+
+.main_inner {
+    flex-wrap: wrap;
+    display: flex;
+}
+
+@media only screen and (max-width: 1000px) {
+    .Cheese_Card {
+        max-width: 100%;
+    }
+}

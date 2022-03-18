@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Cheese!
+        </title>
+     
+        <link rel="stylesheet" href="/main.css">
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <img class="logo_image" src="/assets/logocheese.png" alt="">
+                </li>
+                <li> 
+                    Cheese Menu
+                </li>
+                <li>
+                    About our cheeses
+                </li>
+            </ul>
+            <div class="searchContainer">
+                <input type="text" placeholder="Search here" class="barstyle">
+            </div>
+        </nav>
+
+        <div class="main_content">
+            <h1>View our cheeses!</h1>
+            <div id="card_holder" class="main_inner">
+                <div id="placeholder_cheese" class="Cheese_Card">
+                    <h1>White Cheddar</h1>
+                    <p>White Cheddar is white and cheddar at the same time!</p>
+                </div>
+              
+            </div>
+        </div>
+    </body>
+
+    <script>
+       fetch('https://cheesemvc-api.herokuapp.com/cheeses')
+        .then(response => response.json())
+        .then(data => {
+
+            data.forEach(e => {
+                const cheese_card = document.createElement("div")
+
+                const cheese_heading = document.createElement("h1")
+                const cheese_paragraph = document.createElement("p")
+
+                cheese_card.classList.add("Cheese_Card")
+
+                cheese_heading.innerText = e.name;
+                cheese_paragraph.innerText = e.description;
+
+                cheese_card.appendChild(cheese_heading);
+                cheese_card.appendChild(cheese_paragraph);
+
+                const div_container = document.getElementById("card_holder");
+
+                div_container.appendChild(cheese_card)
+            })
+            
+        });
+
+    </script>
+</html>
